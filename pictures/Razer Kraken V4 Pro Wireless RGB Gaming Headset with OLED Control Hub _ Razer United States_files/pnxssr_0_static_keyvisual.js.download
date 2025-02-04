@@ -1,0 +1,50 @@
+var hoverTilesComp = (function() {
+    const hoverTilesPanels = document.querySelectorAll('.hover-tiles');
+    hoverTilesPanels.forEach(function(panel) {
+        const parent = panel.querySelector('.tiles');
+        const tiles = panel.querySelectorAll('.tile-item');
+        const tileLength = tiles.length;
+        const setTileDimensions = () => {
+            parent.style.setProperty('--tile-length', tileLength);
+            tiles.forEach(tile => {
+                const copy = tile.querySelector('.copy');
+                const hiddenCopy = tile.querySelector('.hidden-copy');
+                const bodyCopy = tile.querySelector('.body-copy');
+                                copy.style.width = (parent.offsetWidth / tileLength) + "px";
+                hiddenCopy.style.height = bodyCopy.offsetHeight + "px";
+            });
+        };
+        const throttle = (func, limit) => {
+            let inThrottle;
+            return function() {
+                const args = arguments;
+                const context = this;
+                if (!inThrottle) {
+                    func.apply(context, args);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            };
+        };
+        setTimeout(setTileDimensions, 500);
+        window.addEventListener('resize', throttle(setTileDimensions, 200));
+        tiles.forEach(tile => {
+            const showExpanded = () => {
+                tile.classList.add('expanded');
+                tile.setAttribute('aria-expanded', 'true');
+                parent.classList.add('is-enter');
+            };
+            const hideExpanded = (e) => {
+                if (!tile.contains(e.relatedTarget)) {
+                    tile.classList.remove('expanded');
+                    tile.setAttribute('aria-expanded', 'false');
+                    parent.classList.remove('is-enter');
+                }
+            };
+            tile.addEventListener('mouseenter', showExpanded);
+            tile.addEventListener('mouseleave', hideExpanded);
+            tile.addEventListener('focusin', showExpanded);
+            tile.addEventListener('focusout', hideExpanded); 
+        });
+    });
+})();

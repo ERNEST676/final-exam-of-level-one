@@ -1,0 +1,8 @@
+#scrolling-images-v3-content .scrolling-images-v3 {padding-bottom: 5.25rem;}
+#scrolling-images-v3-content .scrolling-images-v3-flex {padding-top: 0;}
+#scrolling-images-v3-content .scrolling-images-v3-slide {padding: 0 5px;}
+#scrolling-images-v3-content .scrolling-images-v3-slide .content-image {background: #111; border-radius: 0;}
+@media (max-width: 768px) {
+	#scrolling-images-v3-content .scrolling-images-v3 {padding:4rem 0 3rem;}
+}
+ @media screen and (max-width:767px){} @media screen and (-webkit-max-device-pixel-ratio: 1) and (min-width: 1200px), screen and (min-width: 768px) and (max-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1200px){}

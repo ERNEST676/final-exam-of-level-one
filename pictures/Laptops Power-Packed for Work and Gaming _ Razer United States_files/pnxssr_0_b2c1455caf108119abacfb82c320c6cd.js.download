@@ -1,0 +1,98 @@
+const storyTellingPanel = document.querySelectorAll('.storytelling-panel');
+storyTellingPanel.forEach(function(e) {
+    const scrollContainer = e.querySelector('.scroll-container');
+    const sectionContents = e.querySelectorAll('.section-content');
+    const windowHeight = window.innerHeight;
+    const navHeight = 114;
+    const sectionHeight = (windowHeight - navHeight) * 0.7;
+        const numPanels = scrollContainer.getElementsByClassName('section-content').length;
+    scrollContainer.style.height = (numPanels + 1) * sectionHeight + "px";
+    // Function to update start and end values for each section
+    function updateSectionOffsets() {
+        const containerTop = e.getBoundingClientRect().top + window.scrollY;
+        sectionContents.forEach((sec, index) => {
+            const offsetTop = containerTop + (sectionHeight * index);
+            sec.setAttribute('data-start', offsetTop);
+            sec.setAttribute('data-end', offsetTop + sectionHeight);
+        });
+    }
+    // Initial offset setup and resize listener
+    updateSectionOffsets();
+    window.addEventListener('resize', updateSectionOffsets);
+    window.addEventListener('scroll', function() {
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollContainerRect = scrollContainer.getBoundingClientRect();
+                e.classList.toggle('isactive', scrollContainerRect.top <= navHeight && scrollContainerRect.bottom >= 0);
+        sectionContents.forEach(function(sectionContent, index) {
+            const start = parseInt(sectionContent.getAttribute('data-start'), 10);
+            const end = parseInt(sectionContent.getAttribute('data-end'), 10) + 
+                        (sectionContent.classList.contains('last') ? windowHeight : 0);
+            const imgGroup = sectionContent.querySelector('.background-image');
+            const textGroup = sectionContent.querySelector('.content');
+            let scrollProgress = 0;
+            const videoElement = sectionContent.querySelector('video');
+            const btn = videoElement?.nextElementSibling.querySelector('.video-play-pause-btn');
+            if (scrollPos >= start && scrollPos < end) {
+                if (!sectionContent.classList.contains('isfocus')) {
+                    sectionContent.classList.add('isfocus');
+                    if (videoElement && !sectionContent.classList.contains('opacity')) {
+                        btn.setAttribute('aria-label', 'pause video animation');
+                        btn.querySelector('img.play-pause').setAttribute('src', '//assets2.razerzone.com/images/icon/pause.svg');
+                        videoElement.currentTime = 0;
+                        videoElement.play();
+                        videoElement.addEventListener('ended', function() {
+                            btn.setAttribute('aria-label', 'play video animation');
+                            btn.querySelector('img.play-pause').setAttribute('src', '//assets2.razerzone.com/images/icon/play.svg');
+                        });
+                    }
+                }
+            } else if (sectionContent.classList.contains('isfocus')) {
+                sectionContent.classList.remove('isfocus');
+                if (videoElement) {
+                    btn.setAttribute('aria-label', 'pause video animation');
+                    btn.querySelector('img.play-pause').setAttribute('src', '//assets2.razerzone.com/images/icon/pause.svg');
+                }
+            }
+            if (sectionContent.classList.contains('isfocus')) {
+                if (!sectionContent.classList.contains('first')) {
+                    e.querySelector('.first').classList.remove('opacity');
+                } else {
+                    e.querySelector('.first').classList.toggle('opacity', true);
+                }
+                scrollProgress = Math.max(0, Math.min(1, (scrollPos - start) / sectionHeight));
+                const textGroupHeight = textGroup.clientHeight; 
+                const textStartPos = (windowHeight - textGroupHeight) * 0.75;
+                const textEndPos = sectionContent.classList.contains('last') ? 
+                                   (windowHeight * 0.5) - textGroupHeight : windowHeight * 0.1;
+                const translateYValue = textStartPos + scrollProgress * (textEndPos - textStartPos);
+                if (sectionContent.classList.contains('last')) {
+                    scrollProgress = Math.min(scrollProgress, 0.5);
+                }
+                imgGroup.style.opacity = Math.max(0.2, Math.min(0 + (scrollProgress / 0.5) * 0.5, 1));
+                sectionContent.setAttribute('data-progress', scrollProgress);
+                textGroup.style.transform = 'translateY(' + translateYValue + 'px)';
+            }
+            textGroup.style.opacity = (scrollProgress < 0.2) ? 
+                                      (scrollProgress / 0.2).toFixed(2) : 
+                                      (scrollProgress >= 0.8) ? 
+                                      (1 - ((scrollProgress - 0.8) / 0.2)).toFixed(2) : '';
+        });
+    });
+    e.querySelectorAll(".video-play-pause-btn").forEach(function(btn) {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            let pauseStatus = 'pause video animation';
+            let playPauseBtnSpan = '//assets2.razerzone.com/images/icon/pause.svg';
+            if (e.currentTarget.getAttribute('aria-label') === 'pause video animation') {
+                pauseStatus = 'play video animation';
+                playPauseBtnSpan = '//assets2.razerzone.com/images/icon/play.svg';
+                e.currentTarget.parentNode.parentNode.querySelector("video").pause();
+            } else {
+                e.currentTarget.parentNode.parentNode.querySelector("video").play();
+            }
+            e.currentTarget.setAttribute('aria-label', pauseStatus);
+            e.currentTarget.querySelector('img.play-pause').setAttribute('src', playPauseBtnSpan);
+        });
+    });
+});

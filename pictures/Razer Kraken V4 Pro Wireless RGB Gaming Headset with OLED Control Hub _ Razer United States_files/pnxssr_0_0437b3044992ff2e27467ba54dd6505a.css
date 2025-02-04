@@ -1,0 +1,816 @@
+@media screen and (max-width:767px){} @media screen and (-webkit-max-device-pixel-ratio: 1) and (min-width: 1200px), screen and (min-width: 768px) and (max-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1200px){}
+      .volume-down-1 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .volume-down-1, .volume-down-2 {
+        fill: #fff;
+      }
+      .volume-down-3 {
+        fill: #606060;
+      }
+      .volume-down-4 {
+        fill: none;
+      }
+      .volume-down-5 {
+        fill: #303030;
+      }
+      .volume-down-6 {
+        clip-path: url(#clippath-1);
+      }
+      .volume-down-7 {
+        clip-path: url(#clippath-2);
+      }
+      .volume-down-8 {
+        clip-path: url(#clippath);
+      }
+      .volume-up-1, .volume-up-2 {
+        fill: #fff;
+      }
+      .volume-up-3 {
+        fill: #606060;
+      }
+      .volume-up-4 {
+        fill: none;
+      }
+      .volume-up-5 {
+        fill: #303030;
+      }
+      .volume-up-6 {
+        clip-path: url(#clippath-1);
+      }
+      .volume-up-7, .volume-up-2 {
+        isolation: isolate;
+      }
+      .volume-up-8 {
+        clip-path: url(#clippath-3);
+      }
+      .volume-up-2 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .volume-up-9 {
+        clip-path: url(#clippath-2);
+      }
+      .volume-up-10 {
+        clip-path: url(#clippath);
+      }
+      .volume-mute-1, .volume-mute-2 {
+        fill: #fff;
+      }
+      .volume-mute-3 {
+        fill: #606060;
+      }
+      .volume-mute-4 {
+        fill: none;
+      }
+      .volume-mute-5 {
+        fill: #303030;
+      }
+      .volume-mute-6 {
+        clip-path: url(#clippath-1);
+      }
+      .volume-mute-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .volume-mute-7 {
+        clip-path: url(#clippath);
+      }
+      .audio-eq-game-1 {
+        stroke: #666;
+        stroke-linecap: round;
+        stroke-width: 1.5px;
+      }
+      .audio-eq-game-1, .audio-eq-game-2 {
+        fill: none;
+      }
+      .audio-eq-game-3, .audio-eq-game-4 {
+        fill: #fff;
+      }
+      .audio-eq-game-4 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .audio-eq-game-4, .audio-eq-game-5 {
+        isolation: isolate;
+      }
+      .audio-eq-game-6 {
+        fill: #606060;
+      }
+      .audio-eq-game-7 {
+        clip-path: url(#clippath);
+      }
+      .audio-eq-game-8 {
+              }
+      .audio-eq-movie-1 {
+        stroke: #666;
+        stroke-linecap: round;
+        stroke-width: 1.5px;
+      }
+      .audio-eq-movie-1, .audio-eq-movie-2 {
+        fill: none;
+      }
+      .audio-eq-movie-3 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .audio-eq-movie-3, .audio-eq-movie-4 {
+        fill: #fff;
+      }
+      .audio-eq-movie-3, .audio-eq-movie-5 {
+        isolation: isolate;
+      }
+      .audio-eq-movie-4 {
+        fill-rule: evenodd;
+      }
+      .audio-eq-movie-6 {
+        fill: #606060;
+      }
+      .audio-eq-movie-7 {
+        clip-path: url(#clippath);
+      }
+      .audio-eq-movie-8 {
+              }
+      .audio-eq-music-1 {
+        stroke: #666;
+        stroke-linecap: round;
+        stroke-width: 1.5px;
+      }
+      .audio-eq-music-1, .audio-eq-music-2 {
+        fill: none;
+      }
+      .audio-eq-music-3 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .audio-eq-music-3, .audio-eq-music-4 {
+        fill: #fff;
+      }
+      .audio-eq-music-3, .audio-eq-music-5 {
+        isolation: isolate;
+      }
+      .audio-eq-music-4 {
+        fill-rule: evenodd;
+      }
+      .audio-eq-music-6 {
+        fill: #606060;
+      }
+      .audio-eq-music-7 {
+        clip-path: url(#clippath);
+      }
+      .audio-eq-music-8 {
+             }
+      .audio-eq-custom-1 {
+        stroke: #666;
+        stroke-linecap: round;
+        stroke-width: 1.5px;
+      }
+      .audio-eq-custom-1, .audio-eq-custom-2 {
+        fill: none;
+      }
+      .audio-eq-custom-3, .audio-eq-custom-4 {
+        fill: #fff;
+      }
+      .audio-eq-custom-4 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .audio-eq-custom-4, .audio-eq-custom-5 {
+        isolation: isolate;
+      }
+      .audio-eq-custom-6 {
+        fill: #606060;
+      }
+      .audio-eq-custom-7 {
+        clip-path: url(#clippath-1);
+      }
+      .audio-eq-custom-8 {
+        clip-path: url(#clippath);
+      }
+      .audio-eq-custom-9 {
+      }
+      .haptic-profile-controlled-1, .haptic-profile-controlled-2 {
+        fill: #fff;
+      }
+      .haptic-profile-controlled-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .haptic-profile-controlled-2, .haptic-profile-controlled-3 {
+        isolation: isolate;
+      }
+      .haptic-profile-controlled-4 {
+        fill: #606060;
+      }
+      .haptic-profile-controlled-5 {
+        fill: none;
+      }
+      .haptic-profile-controlled-6 {
+        clip-path: url(#clippath);
+      }
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+      .cls-3 {
+        fill: #606060;
+      }
+      .cls-4 {
+        fill: none;
+      }
+      .cls-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+      .cls-3 {
+        fill: #606060;
+      }
+      .cls-4 {
+        fill: none;
+      }
+      .cls-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+      .cls-3 {
+        fill: #606060;
+      }
+      .cls-4, .cls-5 {
+        fill: none;
+      }
+      .cls-6 {
+        clip-path: url(#clippath-1);
+      }
+      .cls-5 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+      .cls-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .cls-7 {
+        clip-path: url(#clippath);
+      }
+      .haptic-intensity-off-1, .haptic-intensity-off-2 {
+        fill: #fff;
+      }
+      .haptic-intensity-off-3 {
+        fill: #606060;
+      }
+      .haptic-intensity-off-4 {
+        fill: none;
+      }
+      .haptic-intensity-off-5 {
+        fill: #303030;
+      }
+      .haptic-intensity-off-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .haptic-intensity-low-1, .haptic-intensity-low-2 {
+        fill: #fff;
+      }
+      .haptic-intensity-low-3 {
+        fill: #606060;
+      }
+      .haptic-intensity-low-4 {
+        fill: none;
+      }
+      .haptic-intensity-low-5 {
+        fill: #303030;
+      }
+      .haptic-intensity-low-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .haptic-intensity-medium-1, .haptic-intensity-medium-2 {
+        fill: #fff;
+      }
+      .haptic-intensity-medium-3 {
+        fill: #606060;
+      }
+      .haptic-intensity-medium-4 {
+        fill: none;
+      }
+      .haptic-intensity-medium-5 {
+        fill: #303030;
+      }
+      .haptic-intensity-medium-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .haptic-intensity-off-1, .haptic-intensity-off-2 {
+        fill: #fff;
+      }
+      .haptic-intensity-off-3 {
+        fill: #606060;
+      }
+      .haptic-intensity-off-4 {
+        fill: none;
+      }
+      .haptic-intensity-off-5 {
+        fill: #303030;
+      }
+      .haptic-intensity-off-6 {
+        fill: #404040;
+      }
+      .haptic-intensity-off-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .input-source-pc-1, .input-source-pc-2 {
+        fill: #fff;
+      }
+      .input-source-pc-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .input-source-pc-2, .input-source-pc-3 {
+        isolation: isolate;
+      }
+      .input-source-pc-4 {
+        fill: #606060;
+      }
+      .input-source-pc-5 {
+        fill: none;
+      }
+      .input-source-pc-6 {
+        clip-path: url(#clippath-1);
+      }
+      .input-source-pc-7 {
+        fill: #f0f;
+        fill-opacity: 0;
+      }
+      .input-source-pc-8 {
+        clip-path: url(#clippath-2);
+      }
+      .input-source-pc-9 {
+        clip-path: url(#clippath);
+      }
+      .input-source-pc-10 {
+              }
+      .input-source-console-1, .input-source-console-2 {
+        fill: #fff;
+      }
+      .input-source-console-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .input-source-console-2, .input-source-console-3 {
+        isolation: isolate;
+      }
+      .input-source-console-4 {
+        fill: #606060;
+      }
+      .input-source-console-5 {
+        fill: none;
+      }
+      .input-source-console-6 {
+        clip-path: url(#clippath-1);
+      }
+      .input-source-console-7 {
+        fill: #f0f;
+        fill-opacity: 0;
+      }
+      .input-source-console-8 {
+        clip-path: url(#clippath-2);
+      }
+      .input-source-console-9 {
+        clip-path: url(#clippath);
+      }
+      .input-source-console-10 {
+              }
+      .input-source-aux-1, .input-source-aux-2 {
+        fill: #fff;
+      }
+      .input-source-aux-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .input-source-aux-2, .input-source-aux-3 {
+        isolation: isolate;
+      }
+      .input-source-aux-4 {
+        fill: #606060;
+      }
+      .input-source-aux-5 {
+        fill: none;
+      }
+      .input-source-aux-6 {
+        clip-path: url(#clippath-1);
+      }
+      .input-source-aux-7 {
+        clip-path: url(#clippath-2);
+      }
+      .input-source-aux-8 {
+        clip-path: url(#clippath);
+      }
+      .input-source-aux-9 {
+              }
+      .sidetone-level-updown-1, .sidetone-level-updown-2 {
+        fill: #fff;
+      }
+      .sidetone-level-updown-3 {
+        fill: #606060;
+      }
+      .sidetone-level-updown-4 {
+        fill: none;
+      }
+      .sidetone-level-updown-5 {
+        fill: #303030;
+      }
+      .sidetone-level-updown-6, .sidetone-level-updown-2 {
+        isolation: isolate;
+      }
+      .sidetone-level-updown-2 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .sidetone-level-updown-7 {
+        clip-path: url(#clippath);
+      }
+      .sidetone-level-off-1, .sidetone-level-off-2 {
+        fill: #fff;
+      }
+      .sidetone-level-off-2 {
+        font-family: RazerF5, RazerF5;
+        font-size: 18px;
+      }
+      .sidetone-level-off-2, .sidetone-level-off-3 {
+        isolation: isolate;
+      }
+      .sidetone-level-off-4 {
+        fill: #606060;
+      }
+      .sidetone-level-off-5 {
+        fill: none;
+      }
+      .sidetone-level-off-6 {
+        fill: #303030;
+      }
+      .sidetone-level-off-7 {
+        clip-path: url(#clippath);
+      }
+      .chat-balance-1 {
+        stroke: #101010;
+      }
+      .chat-balance-1, .chat-balance-2 {
+        fill: none;
+      }
+      .chat-balance-3 {
+        fill-opacity: 0;
+      }
+      .chat-balance-3, .chat-balance-4, .chat-balance-5 {
+        fill: #666;
+      }
+      .chat-balance-6, .chat-balance-7 {
+        fill: #fff;
+      }
+      .chat-balance-7, .chat-balance-5, .chat-balance-8 {
+        fill-rule: evenodd;
+      }
+      .chat-balance-9, .chat-balance-8 {
+        fill: #606060;
+      }
+      .chat-balance-10 {
+        fill: #303030;
+      }
+      .chat-balance-11 {
+        clip-path: url(#clippath);
+      }
+      .chat-balance-12 {
+              }
+      .lighting-brightness-up-1, .lighting-brightness-up-2 {
+        fill: #fff;
+      }
+      .lighting-brightness-up-3 {
+        fill: #606060;
+      }
+      .lighting-brightness-up-4 {
+        fill: none;
+      }
+      .lighting-brightness-up-5 {
+        fill: #303030;
+      }
+      .lighting-brightness-up-6, .lighting-brightness-up-2 {
+        isolation: isolate;
+      }
+      .lighting-brightness-up-2 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .lighting-brightness-up-7 {
+        clip-path: url(#clippath);
+      }
+      .lighting-brightness-up-8 {
+              }
+      .lighting-brightness-down-1, .lighting-brightness-down-2 {
+        fill: #fff;
+      }
+      .lighting-brightness-down-3 {
+        fill: #606060;
+      }
+      .lighting-brightness-down-4 {
+        fill: none;
+      }
+      .lighting-brightness-down-5 {
+        fill: #303030;
+      }
+      .lighting-brightness-down-6, .lighting-brightness-down-2 {
+        isolation: isolate;
+      }
+      .lighting-brightness-down-2 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .lighting-brightness-down-7 {
+        clip-path: url(#clippath);
+      }
+      .lighting-brightness-down-8 {
+              }
+      .lighting-brightness-off-1, .lighting-brightness-off-2 {
+        fill: #fff;
+      }
+      .lighting-brightness-off-3 {
+        fill: #606060;
+      }
+      .lighting-brightness-off-4 {
+        fill: none;
+      }
+      .lighting-brightness-off-5 {
+        fill: #303030;
+      }
+      .lighting-brightness-off-6, .lighting-brightness-off-2 {
+        isolation: isolate;
+      }
+      .lighting-brightness-off-2 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .lighting-brightness-off-7 {
+        clip-path: url(#clippath);
+      }
+      .lighting-brightness-off-8 {
+              }
+      .oled-brightness-updown-1, .oled-brightness-updown-2, .oled-brightness-updown-3 {
+        fill: #fff;
+      }
+      .oled-brightness-updown-2, .oled-brightness-updown-4 {
+        fill-rule: evenodd;
+      }
+      .oled-brightness-updown-5 {
+        fill: none;
+      }
+      .oled-brightness-updown-6 {
+        fill: #303030;
+      }
+      .oled-brightness-updown-7, .oled-brightness-updown-3 {
+        isolation: isolate;
+      }
+      .oled-brightness-updown-4 {
+        fill: #606060;
+      }
+      .oled-brightness-updown-3 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .oled-brightness-updown-8 {
+        clip-path: url(#clippath);
+      }
+      .oled-brightness-updown-9 {
+              }
+      .oled-brightness-updown-10 {
+        fill: #707070;
+      }
+      .oled-brightness-off-1, .oled-brightness-off-2, .oled-brightness-off-3 {
+        fill: #fff;
+      }
+      .oled-brightness-off-2, .oled-brightness-off-4 {
+        fill-rule: evenodd;
+      }
+      .oled-brightness-off-5, .oled-brightness-off-4 {
+        fill: #606060;
+      }
+      .oled-brightness-off-6 {
+        fill: none;
+      }
+      .oled-brightness-off-7 {
+        fill: #303030;
+      }
+      .oled-brightness-off-8 {
+        clip-path: url(#clippath-1);
+      }
+      .oled-brightness-off-9, .oled-brightness-off-3 {
+        isolation: isolate;
+      }
+      .oled-brightness-off-3 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .oled-brightness-off-10 {
+        clip-path: url(#clippath);
+      }
+      .oled-brightness-off-11 {
+              }
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+      .cls-3 {
+        fill: #606060;
+      }
+      .cls-4 {
+        fill: none;
+      }
+      .cls-5 {
+        fill: #303030;
+      }
+      .cls-6 {
+        clip-path: url(#clippath-1);
+      }
+      .cls-7, .cls-2 {
+        isolation: isolate;
+      }
+      .cls-8 {
+        clip-path: url(#clippath-3);
+      }
+      .cls-2 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .cls-9 {
+        clip-path: url(#clippath-2);
+      }
+      .cls-10 {
+        clip-path: url(#clippath);
+      }
+      .system-info-1 {
+        fill: none;
+      }
+      .system-info-2, .system-info-3, .system-info-4 {
+        isolation: isolate;
+      }
+      .system-info-5 {
+        fill: #666;
+      }
+      .system-info-6 {
+        fill: #f0f;
+      }
+      .system-info-6, .system-info-7 {
+        fill-opacity: 0;
+      }
+      .system-info-3 {
+        font-family: RazerF5, RazerF5;
+        font-size: 14px;
+      }
+      .system-info-3, .system-info-4 {
+        fill: #fff;
+      }
+      .system-info-4 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .system-info-7 {
+        fill: red;
+      }
+      .system-info-8 {
+        clip-path: url(#clippath);
+      }
+      .system-info-9 {
+        fill: #707070;
+      }
+      .headset-info-1, .headset-info-2 {
+        fill: #fff;
+      }
+      .headset-info-3 {
+        fill: #606060;
+      }
+      .headset-info-4 {
+        fill: none;
+      }
+      .headset-info-5 {
+        clip-path: url(#clippath-1);
+      }
+      .headset-info-6, .headset-info-2 {
+        isolation: isolate;
+      }
+      .headset-info-7 {
+        fill: #f0f;
+        fill-opacity: 0;
+      }
+      .headset-info-2 {
+        font-family: RazerF5Bold, RazerF5;
+        font-size: 14px;
+      }
+      .headset-info-8 {
+        clip-path: url(#clippath);
+      }
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+      .cls-3 {
+        fill: #606060;
+      }
+      .cls-4 {
+        fill: none;
+      }
+      .cls-5 {
+        fill: #303030;
+      }
+      .cls-6 {
+        clip-path: url(#clippath-1);
+      }
+      .cls-7, .cls-2 {
+        isolation: isolate;
+      }
+      .cls-8 {
+        clip-path: url(#clippath-3);
+      }
+      .cls-2 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .cls-9 {
+        clip-path: url(#clippath-2);
+      }
+      .cls-10 {
+        clip-path: url(#clippath);
+      }
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+      .cls-3 {
+        fill: #606060;
+      }
+      .cls-4 {
+        fill: none;
+      }
+      .cls-5 {
+        fill: #303030;
+      }
+      .cls-6 {
+        clip-path: url(#clippath-1);
+      }
+      .cls-7, .cls-2 {
+        isolation: isolate;
+      }
+      .cls-8 {
+        clip-path: url(#clippath-3);
+      }
+      .cls-2 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .cls-9 {
+        clip-path: url(#clippath-2);
+      }
+      .cls-10 {
+        clip-path: url(#clippath);
+      }
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+      .cls-3 {
+        fill: #606060;
+      }
+      .cls-4 {
+        fill: none;
+      }
+      .cls-5 {
+        fill: #303030;
+      }
+      .cls-6 {
+        clip-path: url(#clippath-1);
+      }
+      .cls-7, .cls-2 {
+        isolation: isolate;
+      }
+      .cls-8 {
+        clip-path: url(#clippath-3);
+      }
+      .cls-2 {
+        font-family: RazerF5SemiBold, RazerF5;
+        font-size: 18px;
+      }
+      .cls-9 {
+        clip-path: url(#clippath-2);
+      }
+      .cls-10 {
+        clip-path: url(#clippath);
+      }

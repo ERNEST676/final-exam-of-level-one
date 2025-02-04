@@ -1,0 +1,14 @@
+#scrolling-images-v3-content .main-paragraph-1{
+max-width: 800px;
+}
+#scrolling-images-v3-content .btn{
+color: #000!important;
+line-height: 1.5em;
+text-decoration: none!important;
+}
+#scrolling-images-v3-content .scrolling-images-v3 {padding: 0 0 6.25rem;}
+#scrolling-images-v3-content .scrolling-images-v3-flex {padding: 0 0 30px;}
+@media (max-width: 768px) {
+	#scrolling-images-v3-content .scrolling-images-v3 {padding-bottom: 3rem;}
+}
+ @media screen and (max-width:767px){} @media screen and (-webkit-max-device-pixel-ratio: 1) and (min-width: 1200px), screen and (min-width: 768px) and (max-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1200px){}

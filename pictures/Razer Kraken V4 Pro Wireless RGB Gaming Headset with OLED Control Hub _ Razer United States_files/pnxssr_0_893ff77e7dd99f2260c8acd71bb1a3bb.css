@@ -1,0 +1,7 @@
+#videos-loop {padding-bottom: 6.25rem;}
+@media (max-width: 768px) {
+	#videos-loop {padding-bottom: 3rem;}
+}
+#videos-loop #video-collage{grid-template-columns: repeat(2,1fr);}
+@media(min-width:768px){#videos-loop #video-collage{grid-template-columns: repeat(6,1fr);}}
+ @media screen and (max-width:767px){} @media screen and (-webkit-max-device-pixel-ratio: 1) and (min-width: 1200px), screen and (min-width: 768px) and (max-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1200px){}

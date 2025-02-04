@@ -1,0 +1,12 @@
+#pointers .copy .header{ font: bold 1.5rem/1 "Titillium Web",RazerF5,Arial,Helvetica,sans-serif!important; color: #44d62c;}
+#pointers .copy .body-copy {color: #fff;}
+#pointers .pin:before {right: 0; width: 10px; height: 10px; top: -4px;}
+@media screen and (min-width: 768px) {
+    #pointers .lock-container {
+        min-height: 850px;
+    }
+}
+@media screen and (max-width:767px){
+	#pointers.bo-temp {display:none!important;}
+}
+ @media screen and (max-width:767px){#pnxssr_4bd5d13ec0be14786eedbf4283de841c ul[pnxssr_8]{max-width:700px}#pnxssr_4bd5d13ec0be14786eedbf4283de841c li[pnxssr_9]{bottom:590px}#pnxssr_4bd5d13ec0be14786eedbf4283de841c div[pnxssr_15]{right: calc(100% - 57%)}#pnxssr_4bd5d13ec0be14786eedbf4283de841c li[pnxssr_17]{bottom:155px}#pnxssr_4bd5d13ec0be14786eedbf4283de841c div[pnxssr_21]{right: calc(100% - 72%)}} @media screen and (-webkit-max-device-pixel-ratio: 1) and (min-width: 1200px), screen and (min-width: 768px) and (max-width: 1200px){#pnxssr_4bd5d13ec0be14786eedbf4283de841c ul[pnxssr_8]{max-width:700px}#pnxssr_4bd5d13ec0be14786eedbf4283de841c li[pnxssr_9]{bottom:590px}#pnxssr_4bd5d13ec0be14786eedbf4283de841c div[pnxssr_15]{right: calc(100% - 57%)}#pnxssr_4bd5d13ec0be14786eedbf4283de841c li[pnxssr_17]{bottom:155px}#pnxssr_4bd5d13ec0be14786eedbf4283de841c div[pnxssr_21]{right: calc(100% - 72%)}} @media screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 1200px){#pnxssr_4bd5d13ec0be14786eedbf4283de841c ul[pnxssr_8]{max-width:700px}#pnxssr_4bd5d13ec0be14786eedbf4283de841c li[pnxssr_9]{bottom:590px}#pnxssr_4bd5d13ec0be14786eedbf4283de841c div[pnxssr_15]{right: calc(100% - 57%)}#pnxssr_4bd5d13ec0be14786eedbf4283de841c li[pnxssr_17]{bottom:155px}#pnxssr_4bd5d13ec0be14786eedbf4283de841c div[pnxssr_21]{right: calc(100% - 72%)}} @media screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1200px){#pnxssr_4bd5d13ec0be14786eedbf4283de841c ul[pnxssr_8]{max-width:700px}#pnxssr_4bd5d13ec0be14786eedbf4283de841c li[pnxssr_9]{bottom:590px}#pnxssr_4bd5d13ec0be14786eedbf4283de841c div[pnxssr_15]{right: calc(100% - 57%)}#pnxssr_4bd5d13ec0be14786eedbf4283de841c li[pnxssr_17]{bottom:155px}#pnxssr_4bd5d13ec0be14786eedbf4283de841c div[pnxssr_21]{right: calc(100% - 72%)}}

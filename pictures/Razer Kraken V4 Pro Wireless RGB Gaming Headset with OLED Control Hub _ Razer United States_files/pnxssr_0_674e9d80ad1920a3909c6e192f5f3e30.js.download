@@ -1,0 +1,21 @@
+document.querySelectorAll("section.video-multiple-bg-mp4 .video-play-pause-btn").forEach(function(btn){
+	btn.addEventListener("click", (e) => {
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		var pauseStatus = 'pause video animation';
+		var playPauseBtnSpan = '//assets2.razerzone.com/images/icon/pause.svg';
+		if((e.currentTarget.getAttribute('aria-label') === 'pause video animation')) {
+			pauseStatus = 'play video animation';
+			playPauseBtnSpan = '//assets2.razerzone.com/images/icon/play.svg';
+			e.currentTarget.parentNode.parentNode.querySelectorAll("video").forEach((e) => {
+			  e.pause();
+			});
+		}else{
+			e.currentTarget.parentNode.parentNode.querySelectorAll("video").forEach((e) => {
+			  e.play();
+			});
+		}
+		e.currentTarget.setAttribute('aria-label', pauseStatus);
+		e.currentTarget.querySelector('img.play-pause').setAttribute('src', playPauseBtnSpan);
+	});
+});

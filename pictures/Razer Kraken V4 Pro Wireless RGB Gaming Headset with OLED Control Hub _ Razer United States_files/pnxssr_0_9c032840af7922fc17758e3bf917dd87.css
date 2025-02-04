@@ -1,0 +1,19 @@
+.intro .header .orphanfixed{
+	text-align: center;
+	background: #44d62c;
+	background: linear-gradient(90deg, #F60403 0%, #FFD40B 20%,  #2ED75A 40%, #14E4FE 65%, #4310C2 85%, #F60403 100%);
+	background-size: 200%;
+	font-weight: bolder;
+	color: transparent;
+	background-clip: text;
+	animation: animation 4s linear infinite 1s;
+}
+@keyframes animation {
+	from {
+		background-position: 200% center;
+	}
+	to {
+		background-position: 0% center;
+	}
+}
+ @media screen and (max-width:767px){} @media screen and (-webkit-max-device-pixel-ratio: 1) and (min-width: 1200px), screen and (min-width: 768px) and (max-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1200px){}

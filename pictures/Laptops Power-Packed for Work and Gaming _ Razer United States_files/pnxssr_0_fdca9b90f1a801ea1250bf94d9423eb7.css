@@ -1,0 +1,11 @@
+@media (min-width: 769px) {
+#usp-list .storytelling-panel .scroll-container .scroll-sticky .section-content .background-image img, 
+#usp-list .storytelling-panel .scroll-container .scroll-sticky .section-content .background-image picture {
+width: 100%; object-fit: cover; aspect-ratio: 1/ 1; }
+#usp-list .storytelling-panel .scroll-container .scroll-sticky .section-content .content .body-copy { grid-column: 3/11}
+}
+.storytelling-panel .scroll-container .scroll-sticky .section-content {transition:all 0.3s ease;}
+.storytelling-panel .scroll-container .scroll-sticky .section-content .background-image {transition:opacity 0.3s ease;}
+.storytelling-panel .scroll-container .scroll-sticky .section-content.opacity {opacity:1!important}
+.storytelling-panel .scroll-container .scroll-sticky .section-content.opacity .background-image {opacity:0.2;}
+ @media screen and (max-width:767px){} @media screen and (-webkit-max-device-pixel-ratio: 1) and (min-width: 1200px), screen and (min-width: 768px) and (max-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1200px){}

@@ -1,0 +1,12 @@
+#community-carousel {padding-bottom: 0; }
+#community-carousel .carousel-cards-glide {padding-top: 0;}
+@media (min-width: 1025px) {
+	#community-carousel .carousel-cards-component .content-blockquotes .header {min-height: 72px;}
+}
+@media (min-width: 769px) {
+	#community-carousel {margin-top: 6.25rem; margin-bottom: 5.25rem;}
+}
+@media (max-width: 768px) {
+	#community-carousel {margin-top: 3rem; margin-bottom: 2.25rem;}
+}
+ @media screen and (max-width:767px){#pnxssr_a222b165f66eeed14f9c8bcf263bc9da div[pnxssr_5]{visibility:hidden;}} @media screen and (-webkit-max-device-pixel-ratio: 1) and (min-width: 1200px), screen and (min-width: 768px) and (max-width: 1200px){#pnxssr_a222b165f66eeed14f9c8bcf263bc9da div[pnxssr_5]{visibility:hidden;}} @media screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 1200px){#pnxssr_a222b165f66eeed14f9c8bcf263bc9da div[pnxssr_5]{visibility:hidden;}} @media screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1200px){#pnxssr_a222b165f66eeed14f9c8bcf263bc9da div[pnxssr_5]{visibility:hidden;}}

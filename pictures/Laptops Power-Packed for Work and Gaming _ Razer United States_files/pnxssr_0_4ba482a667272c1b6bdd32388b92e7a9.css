@@ -1,0 +1,26 @@
+.bo-temp .header,
+.carousel-cards .main-heading,
+.scrolling-images-v3 .main-heading {color: #fff !important; }
+#why-buy {padding-top:0; padding-bottom: 5.25rem; }
+#storytelling-header .bo-temp { margin-top: 0; }
+@media (min-width:769px){
+	#sticky-video-panel .sticky-video-panel {padding-top:3rem}
+	#sticky-video-panel .bo-temp .header { font-size:4.5rem;}
+	#storytelling-header .bo-temp { padding-bottom: 4.25rem; }
+}
+@media (max-width:768px){
+	#sticky-video-panel .bo-temp .header { font-size:2rem;}
+	#storytelling-header .bo-temp { padding-bottom: 3rem;}
+	#scrolling-images-v3-content .scrolling-images-v3 {padding-top:0;padding-bottom:5.25rem}
+.bo-temp .header,
+#community-carousel.carousel-cards .main-heading,
+#scrolling-images-v3-content .scrolling-images-v3 .main-heading { font: 700 1.75rem / 1 "Titillium Web", RazerF5, Arial, Helvetica, sans-serif; }
+}
+@media (max-width: 425px) {
+.bo-temp .header,
+#community-carousel.carousel-cards .main-heading,
+#scrolling-images-v3-content .scrolling-images-v3 .main-heading {
+        font-size: min(8vw, 1.75rem);
+    }
+}
+ @media screen and (max-width:767px){} @media screen and (-webkit-max-device-pixel-ratio: 1) and (min-width: 1200px), screen and (min-width: 768px) and (max-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 1200px){} @media screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1200px){}

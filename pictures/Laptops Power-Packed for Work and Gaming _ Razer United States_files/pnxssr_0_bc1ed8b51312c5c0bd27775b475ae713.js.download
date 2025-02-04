@@ -1,0 +1,211 @@
+var stickyVideosRowComp = (function() {
+    const stickyVideosPanels = document.querySelectorAll('.sticky-video-panel');
+    const checkIfMobile = (panel) => {
+        if (window.innerWidth < 768) {
+            panel.classList.add('is-mobile');
+        } else {
+            panel.classList.remove('is-mobile');
+        }
+    };
+    const debounce = (func, wait = 20) => {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    };
+    const throttle = (func, limit = 100) => {
+        let inThrottle;
+        return function(...args) {
+            if (!inThrottle) {
+                func.apply(this, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    };
+    const calculateDimensions = (panel, cachedData = {}) => {
+        let windowHeight = cachedData.windowHeight || window.innerHeight;
+        let navHeight = cachedData.navHeight || (window.innerWidth > 768 ? 120 : 0); 
+        const stickyElem = panel.querySelector('.sticky-element');
+        const videosRow = panel.querySelector('.video-row');
+        const contentRow = panel.querySelector('.content-row');
+        const stickyElemHeight = stickyElem.offsetHeight;
+        const videoRowHeight = videosRow ? videosRow.offsetHeight : 0;
+        const contentRowHeight = contentRow ? contentRow.offsetHeight : 0;
+        return {
+            windowHeight,
+            navHeight,
+            stickyElemHeight,
+            videoRowHeight,
+            contentRowHeight,
+            panelHeight: panel.offsetHeight,
+            spacer: windowHeight > stickyElemHeight ? (windowHeight - stickyElemHeight) / 2 : (windowHeight - videoRowHeight) / 2
+        };
+    };
+    const updatePanelLayout = (panel) => {
+        const { windowHeight, navHeight, stickyElemHeight, videoRowHeight, contentRowHeight, spacer } = calculateDimensions(panel);
+        const scrollableArea = panel.querySelector('.scrollable-area');
+        const stickyElem = panel.querySelector('.sticky-element');
+        const videosRow = panel.querySelector('.video-row');
+        const videoItem = videosRow.querySelectorAll('.video-item');
+        const videoLength = videoItem.length;
+        const scrollHeight = Math.max((videoRowHeight * 0.5) * videoLength, windowHeight);
+        const topSpacer = Math.max(spacer, navHeight);
+        const stickyTop = windowHeight - navHeight < stickyElemHeight ? -(contentRowHeight - topSpacer) : topSpacer;
+        const remainingScroll = scrollHeight + spacer;
+        const scrollSegment = Math.floor(remainingScroll / videoLength);
+                if (scrollableArea) scrollableArea.style.height = `${spacer + stickyElemHeight + scrollHeight}px`;
+        if (stickyElem) stickyElem.style.top = `${stickyTop}px`;
+        if (videosRow) {
+            videosRow.setAttribute('data-segment', `${scrollSegment}`);
+            videosRow.setAttribute('data-length', `${videoLength}`);
+        }
+                return scrollSegment;
+    };
+    const trackScroll = (panel, scrollSegment) => {
+        const stickyElem = panel.querySelector('.sticky-element');
+        const videosRow = panel.querySelector('.video-row');
+        const videoItem = panel.querySelectorAll('.video-item');
+        const videoLength = videoItem.length;
+        let lastActiveIndex = -1;
+        const calculateTranslateX = (index) => {
+            const maxTranslateX = -50; // Max translateX value for last video
+            if (index === 0) return 0;
+            return (maxTranslateX / (videoLength - 1)) * index; 
+        };
+        return throttle(function() {
+            const { spacer } = calculateDimensions(panel);
+            const scrollAmount = window.scrollY - panel.offsetTop + spacer;
+                        if (panel.getBoundingClientRect().top < -90 && parseInt(getComputedStyle(stickyElem).top) < 0) {
+                panel.classList.add('is-focus');
+            } else {
+                panel.classList.remove('is-focus');
+            }
+            videoItem.forEach(item => {
+                const video = item.querySelector('video');
+                const btn = item.querySelector(".video-play-pause-btn"); 
+                item.classList.remove('is-active');
+                item.setAttribute('tabindex',0);
+                if (video) {
+                    video.pause();
+                    if (btn) updatePlayPauseButton(btn, false);
+                }
+            });
+            for (let i = 0; i < videoLength; i++) {
+                if (scrollAmount > scrollSegment * i && scrollAmount <= scrollSegment * (i + 1)) {
+                    videoItem[i].classList.add('is-active');
+                    videoItem[i].setAttribute('tabindex',1);
+                    const video = videoItem[i].querySelector('video');
+                    const btn = videoItem[i].querySelector(".video-play-pause-btn");
+                    btn.focus({ preventScroll: true });
+                    // if (panel.classList.contains('is-mobile') && !(videoLength < 3)) {
+                    //     if (i !== lastActiveIndex) {
+                    //         lastActiveIndex = i;
+                    //         //const translateXValue = `${calculateTranslateX(i)}vw`;
+                    //         //videosRow.style.transform = `translateX(${translateXValue})`;
+                    //     }
+                    // }
+                    if (video && video.paused) {
+                        if (btn) updatePlayPauseButton(btn, true);
+                        video.play().catch(error => {
+                            if (error.name !== 'AbortError') {
+                                console.warn('Error playing video:', error);
+                            }
+                        });
+                    }
+                    break;
+                }
+            }
+        });
+    };
+    const updatePlayPauseButton = (btn, isPlaying) => {
+        //const playPauseIcon = btn.querySelector('img.play-pause');
+        btn.setAttribute('aria-label', isPlaying ? 'pause video animation' : 'play video animation');
+        //playPauseIcon.setAttribute('src', isPlaying ? '//assets2.razerzone.com/images/icon/pause.svg' : '//assets2.razerzone.com/images/icon/play.svg');
+    };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const panel = entry.target;
+            let scrollSegment = updatePanelLayout(panel);
+            let scrollHandler = trackScroll(panel, scrollSegment);
+            if (entry.isIntersecting) {
+                panel.classList.add('is-in-view');
+                window.addEventListener('scroll', scrollHandler); // Throttling included
+                const handleResize = debounce(() => {
+                    checkIfMobile(panel);
+                    panel.querySelector('.video-row').style.transform = "";
+                    scrollSegment = updatePanelLayout(panel);
+                    window.removeEventListener('scroll', scrollHandler); 
+                    scrollHandler = trackScroll(panel, scrollSegment); 
+                    window.addEventListener('scroll', scrollHandler); 
+                }, 100);
+                window.addEventListener('resize', handleResize);
+                if (panel.getBoundingClientRect().top < -90 && parseInt(getComputedStyle(panel.querySelector('.sticky-element')).top) < 0) {
+                    panel.classList.add('is-focus');
+                }
+                scrollHandler();
+            } else {
+                panel.classList.remove('is-in-view');
+                window.removeEventListener('scroll', scrollHandler);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.05
+    });
+    stickyVideosPanels.forEach(panel => {
+        checkIfMobile(panel);
+        const videoItem = panel.querySelectorAll('.video-item');
+        const scrollSegment = panel.querySelector('.video-row')?.getAttribute('data-segment') ?? updatePanelLayout(panel);
+        const panelOffset = panel.getBoundingClientRect().top +     window.scrollY;
+    const videoPosition = (index) => {
+        return panelOffset + (scrollSegment * (index + 0.6));
+    };
+            videoItem.forEach(item => {
+            const video = item.querySelector('video');
+            const btn = item.querySelector(".video-play-pause-btn")
+            if (video) {
+                video.addEventListener('loadedmetadata', () => {
+                    updatePanelLayout(panel);
+                });
+                video.addEventListener('ended', () => {
+                    const currentIndex = Array.prototype.indexOf.call(videoItem, item);
+                    if (currentIndex + 1 < videoItem.length) {
+                        window.scrollTo({ top: videoPosition(currentIndex + 1, scrollSegment), behavior: 'smooth' });
+                    }
+                    if (currentIndex + 1 == videoItem.length) {
+console.log('last')
+                        if (btn) updatePlayPauseButton(btn, false);
+                    }
+                });
+            }
+            ['focus', 'click'].forEach(eventType => {
+                item.addEventListener(eventType, () => {
+                    const currentIndex = Array.prototype.indexOf.call(videoItem, item);
+                    if (currentIndex < videoItem.length) {
+                        window.scrollTo({ top: videoPosition(currentIndex, scrollSegment), behavior: 'smooth' });
+                    }
+                });
+            });
+            item.querySelector(".video-play-pause-btn").addEventListener("click", function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var pauseStatus = 'pause video animation';
+                //var playPauseBtnSpan = '//assets2.razerzone.com/images/icon/pause.svg';
+                                if (e.currentTarget.getAttribute('aria-label') === 'pause video animation') {
+                    pauseStatus = 'play video animation';
+                    //playPauseBtnSpan = '//assets2.razerzone.com/images/icon/play.svg';
+                    e.currentTarget.parentNode.parentNode.querySelector("video").pause();
+                } else {
+                    e.currentTarget.parentNode.parentNode.querySelector("video").play();
+                }
+                                e.currentTarget.setAttribute('aria-label', pauseStatus);
+                //e.currentTarget.querySelector('img.play-pause').setAttribute('src', playPauseBtnSpan);
+            });
+        });
+        observer.observe(panel);
+    });
+})();
+document.addEventListener('DOMContentLoaded', stickyVideosRowComp);
